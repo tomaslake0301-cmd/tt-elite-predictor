@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { Activity, Trophy, Users, Target, RefreshCw, LogOut, CalendarDays } from 'lucide-react';
 const url = import.meta.env.VITE_SUPABASE_URL;
