@@ -1,2 +1,30 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#101216"/><title>TT Elite Predictor</title></head><body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#101216"/>
+<title>TT Elite Predictor</title>
+<style>
+html,body{margin:0;min-height:100%;background:#101216;color:#f2f3f4;font-family:system-ui,sans-serif}
+#startup-status{padding:28px 20px;max-width:600px;margin:12vh auto 0;color:#b6ed56}
+#startup-status p{color:#aab4ad;font-size:14px;line-height:1.5}
+#startup-status pre{white-space:pre-wrap;overflow-wrap:anywhere;color:#ffb5a6;font-size:12px}
+</style>
+<script>
+window.addEventListener('error',function(e){
+ var box=document.getElementById('startup-status');
+ if(box){box.innerHTML='<h2>App startup error</h2><p>The page loaded, but a script failed.</p><pre>'+String(e.message||'Unknown script error')+'</pre>';}
+});
+window.addEventListener('unhandledrejection',function(e){
+ var box=document.getElementById('startup-status');
+ if(box){box.innerHTML='<h2>App startup error</h2><p>The app reported an unhandled error.</p><pre>'+String(e.reason&&e.reason.message||e.reason||'Unknown error')+'</pre>';}
+});
+</script>
+</head>
+<body>
+<div id="startup-status"><h2>TT Elite Predictor</h2><p>Starting the app… If this message remains, the JavaScript app did not finish loading.</p></div>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
